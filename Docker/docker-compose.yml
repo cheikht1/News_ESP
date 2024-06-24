@@ -1,0 +1,30 @@
+# Docker/docker-compose.yml
+version: '3.8'
+
+services:
+  php-apache:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ../:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: news
+      MYSQL_USER: cheikht
+      MYSQL_PASSWORD: root
+
+volumes:
+  db_data:
