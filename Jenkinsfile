@@ -39,10 +39,10 @@ pipeline {
                     dir('kubernetes') {
                         script {
                             // Assurez-vous que kubectl est installé et configuré
-                            bat "kubectl apply -f db_deploy.yml --validate=false --kubeconfig %KUBECONFIG%"
-                            bat "kubectl apply -f db_serv.yml --validate=false --kubeconfig %KUBECONFIG%"
-                            bat "kubectl apply -f web_deploy.yml --validate=false --kubeconfig %KUBECONFIG%"
-                            bat "kubectl apply -f web_serv.yml --validate=false --kubeconfig %KUBECONFIG%"
+                            bat "kubectl apply -f db_deploy.yml --validate=false --kubeconfig=%KUBECONFIG%"
+                            bat "kubectl apply -f db_serv.yml --validate=false --kubeconfig=%KUBECONFIG%"
+                            bat "kubectl apply -f web_deploy.yml --validate=false --kubeconfig=%KUBECONFIG%"
+                            bat "kubectl apply -f web_serv.yml --validate=false --kubeconfig=%KUBECONFIG%"
                         }
                     }
                 }
