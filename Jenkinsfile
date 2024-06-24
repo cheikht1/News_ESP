@@ -6,6 +6,7 @@ pipeline {
         DOCKER_TAG1 = "latest"
         DOCKER_IMAGE2 = "mysql_esp_news"
         DOCKER_TAG2 = "latest"
+        KUBECONFIG = "C:/Users/bmd tech/.kube/config"
     }
     stages {
         stage('Créer les fichiers Image Docker') {
@@ -32,5 +33,20 @@ pipeline {
                 }
             }
         }
+        stage('Déployer sur Kubernetes') {
+            steps {
+            withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                dir('kubernetes') {
+                    script {
+                        // Assurez-vous que kubectl est installé et configuré
+                        bat "kubectl apply -f db_deploy.yml"
+                        bat "kubectl apply -f db_serv.yml"
+                        bat "kubectl apply -f web_deploy.yml"
+                        bat "kubectl apply -f web_serv.yml"
+                    }
+                }
+            }    
+            }
+        }    
     }
 }
