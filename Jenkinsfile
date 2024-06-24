@@ -8,15 +8,6 @@ pipeline {
         DOCKER_TAG2 = "latest"
     }
     stages {
-        stage('Changer de répertoire') {
-            steps {
-                dir('Docker') {
-                    script {
-                        // bat "cd Docker"
-                    }
-                }
-            }
-        }
         stage('Créer les fichiers Image Docker') {
             steps {
                 dir('Docker') {
