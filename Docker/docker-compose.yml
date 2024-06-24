@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  php-apache:
+    build: .
+    ports:
+      - "8080:80"
+      - "8081:8080"  # Exposer également le port 8080 pour les métriques
+    volumes:
+      - ..:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+      - ../mglsi_news.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: news
+      MYSQL_USER: cheikht
+      MYSQL_PASSWORD: root
+volumes:
+  db_data:
+
