@@ -1,3 +1,5 @@
+<!-- Article.php : ce fichier contient les méthodes pour interagir avec la base de données concernant les articles. -->
+
 <?php
 class Article {
     public static function getByCategory($conn, $categoryId) {

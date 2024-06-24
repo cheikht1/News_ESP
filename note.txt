@@ -1,0 +1,27 @@
+Le modèle MVC (Model-View-Controller) est un schéma architectural qui sépare une application en trois composants principaux : le Modèle (Model), la Vue (View) et le Contrôleur (Controller).
+Cette séparation permet de gérer plus facilement les différents aspects d'une application et de rendre le code plus modulaire, réutilisable et maintenable.
+
+Description du modèle MVC
+Modèle (Model) :
+
+Le modèle gère les données de l'application et les règles de gestion.
+Il interagit avec la base de données pour récupérer, insérer, mettre à jour ou supprimer des données.
+Dans notre projet, les modèles sont représentés par les classes Category et Article.
+Vue (View) :
+
+La vue est responsable de l'affichage des données. Elle présente les informations à l'utilisateur.
+Elle ne contient pas de logique de gestion des données, seulement la logique de présentation.
+Dans notre projet, les vues sont les fichiers PHP dans le dossier views comme header.php, nav.php, home.php, category.php, article.php, et footer.php.
+Contrôleur (Controller) :
+
+Le contrôleur agit comme un intermédiaire entre le modèle et la vue.
+Il récupère les données du modèle et les transmet à la vue.
+Il gère également les interactions de l'utilisateur, en appelant le modèle et en sélectionnant la vue appropriée à afficher.
+Dans notre projet, les contrôleurs sont CategoryController.php.
+
+Résumé
+Modèle (Model) : Category.php et Article.php gèrent les interactions avec la base de données.
+Vue (View) : les fichiers dans le dossier views gèrent la présentation des données.
+Contrôleur (Controller) : CategoryController.php gère la logique d'application et la coordination entre le modèle et la vue.
+
+En structurant le code de cette manière, nous assurons une meilleure séparation des préoccupations, ce qui rend l'application plus facile à gérer et à étendre.
