@@ -12,7 +12,7 @@ pipeline {
             steps {
                 dir('Docker') {
                     script {
-                        bat "cd Docker"
+                        // bat "cd Docker"
                     }
                 }
             }
