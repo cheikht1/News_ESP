@@ -4,7 +4,7 @@ version: '3.8'
 services:
   php-apache:
     build:
-      context: .
+      context: ..
       dockerfile: web.Dockerfile
     ports:
       - "8080:80"
@@ -15,7 +15,7 @@ services:
 
   db:
     build:
-      context: .
+      context: ..
       dockerfile: db.Dockerfile
     volumes:
       - db_data:/var/lib/mysql
