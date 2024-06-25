@@ -11,7 +11,7 @@ RUN a2enmod status
 RUN echo "ExtendedStatus On\n<Location /server-status>\n  SetHandler server-status\n  Require all granted\n</Location>" >> /etc/apache2/apache2.conf
 
 # Copier le code de l'application dans le répertoire approprié
-COPY .. /var/www/html/
+COPY . /var/www/html/
 
 # Configurer les permissions
 RUN chown -R www-data:www-data /var/www/html \
