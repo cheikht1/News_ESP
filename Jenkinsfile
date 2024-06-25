@@ -9,30 +9,30 @@ pipeline {
         KUBECONFIG = "C:/Users/bmd tech/.kube/config"
     }
     stages {
-        // stage('Créer les fichiers Image Docker') {
-        //     steps {
-        //         dir('Docker') {
-        //             script {
-        //                 bat "docker --version" // Vérifier que Docker est accessible
-        //                 // Construction des images Docker
-        //                 bat "docker build -t ${DOCKER_IMAGE2}:${DOCKER_TAG2} -f db.Dockerfile ."
-        //                 bat "docker build -t ${DOCKER_IMAGE1}:${DOCKER_TAG1} -f web.Dockerfile ."
-        //             }
-        //         }
-        //     }
-        // }
-        // stage('Publier les images Docker') {
-        //     steps {
-        //         script {
-        //             bat "docker login -u cheikht -p m6rZ.uGUKpTXWkq"
-        //             // Pousser les images Docker vers Docker Hub
-        //             bat "docker tag ${DOCKER_IMAGE1}:${DOCKER_TAG1} cheikht/${DOCKER_IMAGE1}:${DOCKER_TAG1}"
-        //             bat "docker push cheikht/${DOCKER_IMAGE1}:${DOCKER_TAG1}"
-        //             bat "docker tag ${DOCKER_IMAGE2}:${DOCKER_TAG2} cheikht/${DOCKER_IMAGE2}:${DOCKER_TAG2}"
-        //             bat "docker push cheikht/${DOCKER_IMAGE2}:${DOCKER_TAG2}"
-        //         }
-        //     }
-        // }
+        stage('Créer les fichiers Image Docker') {
+            steps {
+                dir('Docker') {
+                    script {
+                        bat "docker --version" // Vérifier que Docker est accessible
+                        // Construction des images Docker
+                        bat "docker build -t ${DOCKER_IMAGE2}:${DOCKER_TAG2} -f db.Dockerfile ."
+                        bat "docker build -t ${DOCKER_IMAGE1}:${DOCKER_TAG1} -f web.Dockerfile ."
+                    }
+                }
+            }
+        }
+        stage('Publier les images Docker') {
+            steps {
+                script {
+                    bat "docker login -u cheikht -p m6rZ.uGUKpTXWkq"
+                    // Pousser les images Docker vers Docker Hub
+                    bat "docker tag ${DOCKER_IMAGE1}:${DOCKER_TAG1} cheikht/${DOCKER_IMAGE1}:${DOCKER_TAG1}"
+                    bat "docker push cheikht/${DOCKER_IMAGE1}:${DOCKER_TAG1}"
+                    bat "docker tag ${DOCKER_IMAGE2}:${DOCKER_TAG2} cheikht/${DOCKER_IMAGE2}:${DOCKER_TAG2}"
+                    bat "docker push cheikht/${DOCKER_IMAGE2}:${DOCKER_TAG2}"
+                }
+            }
+        }
         stage('Déployer sur Kubernetes') {
             steps {
                 withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
