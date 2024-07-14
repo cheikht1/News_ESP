@@ -1,2 +1,38 @@
-mglsi_news.sql
+# Ignorer tous les fichiers SQL
+*.sql
+
+# Ignorer le fichier note.txt
 note.txt
+
+# Ignorer les fichiers générés par le système
+.DS_Store
+Thumbs.db
+
+# Ignorer les fichiers de configuration de l'éditeur
+*.sublime-project
+*.sublime-workspace
+.idea/
+*.code-workspace
+.vscode/
+
+# Ignorer les logs
+*.log
+
+# Ignorer les dossiers de build et de dépendances
+/node_modules
+/vendor
+
+# Ignorer les fichiers temporaires
+*.tmp
+*.temp
+*.swp
+
+# Ignorer les fichiers de configuration spécifiques à votre IDE
+*.iml
+
+# Ignorer les fichiers de configuration environnementale
+.env
+
+# Ignorer les fichiers de sauvegarde
+*.bak
+*.backup
