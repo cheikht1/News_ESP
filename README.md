@@ -30,7 +30,7 @@ ESP News est une application de nouvelles développée en PHP en suivant le mod�
 ### 1. Clonez le dépôt
 
 ```bash
-git clone https://github.com/votre-utilisateur/esp-news.git
+git clone https://github.com/cheikht1/esp-news.git
 cd esp-news
 ```
 
@@ -81,7 +81,7 @@ Les contributions sont les bienvenues ! Pour contribuer :
 3. Commitez vos modifications :
 
     ```bash
-    git commit -am 'Ajout d'une nouvelle fonctionnalité'
+    git commit -am "Ajout d'une nouvelle fonctionnalité"
     ```
 
 4. Poussez votre branche :
@@ -110,7 +110,7 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](./LICENSE) pour plus d
 
 ## Auteurs
 
-- **Votre Nom**
+- **CHEIKH MOUHAMED TIDIANE THIAM**
 
 Pour plus d'informations, visitez notre [dépôt GitHub](https://github.com/cheikht1/esp-news).
 
