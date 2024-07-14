@@ -28,4 +28,4 @@ INSERT INTO Article (titre, contenu, categorie) VALUES ('Première victoire du S
 
 ALTER TABLE Article ADD CONSTRAINT fk_categorie_article FOREIGN KEY(categorie) REFERENCES Categorie(id);
 
-GRANT ALL PRIVILEGES ON news.* TO cheikht IDENTIFIED BY 'root';
+-- GRANT ALL PRIVILEGES ON news.* TO cheikht IDENTIFIED BY 'root';
